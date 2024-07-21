@@ -1,0 +1,12 @@
+rrr/.env
+
+db.sqlite3
+
+**/migrations/**
+!**/migrations
+
+__pycache__/
+*/__pycache__/
+
+media/*
+!*media

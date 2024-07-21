@@ -1,0 +1,56 @@
+{% extends 'cacao/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class=''>
+	<h1>Ответить на 7 вопросов, чтобы наш ИИ подобрал вариант подарка</h1>
+	<button>Начать</button>
+
+		<center>
+
+			<div id='result_quantity'>
+				<form method="post">
+					{% csrf_token %}
+					<button class='forum' type="submit" name="result_quantity" value="да">ffffff</button>
+					<button class='forum'  type="submit" name="result_quantity" value="нет">ffffff</button>
+				</form>
+			</div>
+						
+			<div id='result_price'>
+				<form method="post">
+					{% csrf_token %}
+					<button class='forum' type="submit" name="result_price" value="да">Да, ffffff</button>
+					<button class='forum'  type="submit" name="result_price" value="нет">К ffffff</button>
+				</form>
+			</div>
+
+			<div id='result_budget'>
+				<form method="post">
+					{% csrf_token %}
+					<input type="" name="">
+					<button class='forum' type="submit" name="result_budget" value="да">ffffff</button>
+
+				</form>
+			</div>
+
+			<div id='result_content'>
+				<form method="post">
+					{% csrf_token %}
+					<button class='forum' type="submit" name="result_content" value="да">ffffff</button>
+					<button class='forum'  type="submit" name="result_content" value="нет">ffffff</button>
+				</form>
+			</div>
+
+
+
+
+
+		</center>
+	
+
+	<h1>Показать 5 самых популярных подарочных наборов месяца</h1>
+	<button>Показать</button>
+
+</div>
+{% endblock %}
