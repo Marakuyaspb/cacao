@@ -11,6 +11,8 @@ class Present(models.Model):
 	presents_cat = models.ForeignKey(PresentCat, on_delete=models.CASCADE,)
 	present = models.CharField(max_length=30, null=True, blank=True, verbose_name = 'Name')
 	price = models.IntegerField(null=True, blank=True, verbose_name = 'Price')
+	info = models.CharField(max_length=600, null=True, blank=True, verbose_name = 'Info')
+	branding = models.CharField(max_length=300, null=True, blank=True, verbose_name = 'Branding')
 	class Meta:
 		verbose_name = 'Present'
 		verbose_name_plural = 'Presents'

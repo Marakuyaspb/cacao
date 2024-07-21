@@ -1,17 +1,18 @@
-from django.conf.urls.static import static
 from django.conf import settings
-from django.urls import path, include
+from django.conf.urls.static import static
+from django.conf.urls import url
 from django.contrib import admin
+
+from django.urls import path, include
 
 from cacao import views
 from cacao import urls
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('cacao.urls')),
     url(r'^telegrambot/', include('telegrambot.urls', namespace="telegrambot")),
-
-
 ]
 
 
