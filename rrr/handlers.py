@@ -1,7 +1,6 @@
 import telebot
-import config
 from telebot import types
-
+import config
 
 bot = telebot.TeleBot(config.TELEGRAM_BOT_TOKEN)
 
@@ -27,6 +26,7 @@ def show_commands(call):
     btn2 = types.KeyboardButton("Поговорить с человеком")
     markup_two.add(btn1, btn2)
 
+
     bot_name = bot.get_me().first_name
 
     bot.send_message(call.message.chat.id, 
@@ -36,21 +36,27 @@ def show_commands(call):
 
 @bot.message_handler(content_types=['text'])
 def handle_text(message):
-
     inline_markup = types.InlineKeyboardMarkup()
     btn3 = types.InlineKeyboardButton("Написать Рустаму", url="https://t.me/RustamPodarok")
     inline_markup.add(btn3)
 
-    if message.chat.type=='private':
+    inline_markup_webapp = types.InlineKeyboardMarkup()
+    webapp_button = types.InlineKeyboardButton(
+        "Ответить на 7 вопросов",
+        web_app=types.WebAppInfo("https://coffeeinveins.ru/")
+    )
+    inline_markup_webapp.add(webapp_button)
+
+    if message.chat.type == 'private':
         if message.text == 'Ответить на 7 вопросов':
-            bot.send_message(message.chat.id, "У меня пока нет вопросов")
+            bot.send_message(message.chat.id, "Ииии... Поехали!", reply_markup=inline_markup_webapp)
         elif message.text == 'Поговорить с человеком':
             bot.send_message(message.chat.id, "🎁 Нюансы заказа и индивидуальные скидки вы можете обсудить с человеком - менеджером Рустамом", reply_markup=inline_markup)
         else:
             bot.send_message(message.chat.id, "У меня недостаточно данных, чтобы ответить на ваш вопрос :( \n Напишите, пожалуйста, Рустаму @RustamPodarok")
 
 if __name__ == "__main__":
-    bot.infinity_polling()
+    bot.polling()
 
 
 
