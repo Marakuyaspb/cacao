@@ -7,20 +7,31 @@ bot = telebot.TeleBot(config.TELEGRAM_BOT_TOKEN)
 
 @bot.message_handler(commands=['start'])
 def start_command(message):
-    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    
-    btn1 = types.KeyboardButton('Ответить на 7 вопросов')
-    btn2 = types.KeyboardButton("Поговорить с человеком")
-    markup.add(btn1, btn2)
+    markup = types.InlineKeyboardMarkup()
+
+    btn_start = types.InlineKeyboardButton("Начать", callback_data='start_action')
+
+    markup.add(btn_start)
 
     bot_name = bot.get_me().first_name
 
-    bot.send_message(message.chat.id, 
-        f"{message.from_user.first_name}, приветствую! Я - {bot_name}, ИИ-помощник 🤖, который помогает с подобором подарков.\n\n Готовы ответить на 7 вопросов? ✨ Начнем?",
-        parse_mode='html',
-        reply_markup=markup)
+    bot.send_message(message.chat.id, f"{message.from_user.first_name}, приветствую! Я - {bot_name}, ИИ-помощник 🤖, который помогает с подобором подарков.",
+        parse_mode='html', reply_markup=markup)
 
-    #bot.send_message(message.chat.id, "Поговорить с человеком", reply_markup=inline_markup)
+
+@bot.callback_query_handler(func=lambda call: call.data == 'start_action')
+def show_commands(call):
+
+    markup_two = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    btn1 = types.KeyboardButton('Ответить на 7 вопросов')
+    btn2 = types.KeyboardButton("Поговорить с человеком")
+    markup_two.add(btn1, btn2)
+
+    bot_name = bot.get_me().first_name
+
+    bot.send_message(call.message.chat.id, 
+        f"Вариантов подарочных наборов очень много! У меня есть 7 вопросов, которые помогут мне понять, что порекомендовать именно вам ✨ Начнем?",
+        reply_markup=markup_two)
 
 
 @bot.message_handler(content_types=['text'])
