@@ -8,9 +8,10 @@ load_dotenv(dotenv_path=env_path)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECURITY WARNING: keep the secret key used in production secret!
+
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
+TELEGRAM_BOT_TOKEN = str(os.getenv('TELEGRAM_BOT_TOKEN'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -100,7 +101,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'ru-ru'
+LANGUAGE_CODE = 'en-en'
 
 TIME_ZONE = 'UTC'
 
