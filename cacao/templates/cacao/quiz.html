@@ -3,54 +3,196 @@
 
 {% block content %}
 
-<div class=''>
-	<h1>Ответить на 7 вопросов, чтобы наш ИИ подобрал вариант подарка</h1>
-	<button>Начать</button>
+<div class='quiz'>
 
+	<div id='the_start' class=''>
+		<br>
+		<h1>Ответить на 7 вопросов, чтобы наш ИИ подобрал вариант подарка</h1>
+		<br>
+		<br>
+		<br>
 		<center>
-
-			<div id='result_quantity'>
-				<form method="post">
-					{% csrf_token %}
-					<button class='forum' type="submit" name="result_quantity" value="да">ffffff</button>
-					<button class='forum'  type="submit" name="result_quantity" value="нет">ffffff</button>
-				</form>
-			</div>
-						
-			<div id='result_price'>
-				<form method="post">
-					{% csrf_token %}
-					<button class='forum' type="submit" name="result_price" value="да">Да, ffffff</button>
-					<button class='forum'  type="submit" name="result_price" value="нет">К ffffff</button>
-				</form>
-			</div>
-
-			<div id='result_budget'>
-				<form method="post">
-					{% csrf_token %}
-					<input type="" name="">
-					<button class='forum' type="submit" name="result_budget" value="да">ffffff</button>
-
-				</form>
-			</div>
-
-			<div id='result_content'>
-				<form method="post">
-					{% csrf_token %}
-					<button class='forum' type="submit" name="result_content" value="да">ffffff</button>
-					<button class='forum'  type="submit" name="result_content" value="нет">ffffff</button>
-				</form>
-			</div>
-
-
-
-
-
+			<button class='forum btn_glass' onclick='show_why();'>Начать</button>
 		</center>
-	
+	</div>
 
+	<center>
+
+		<div id='result_why' class='hide' >
+			<h2>На какой праздник будете дарить подарки?</h2>
+
+			<!-- <form method="post" onclick='show_quantity();'> -->
+			<div onclick='show_quantity();'>
+				{% csrf_token %}
+				<p><button class='forum btn_glass' type="submit" name="result_quantity" value="Новый год">Новый год</button>
+				<p><button class='forum btn_glass'  type="submit" name="result_quantity" value="3 Сентября, День работников нефтяной и газовой промышленности ">3 Сентября, День работников нефтяной и газовой промышленности </button>
+				<p><button class='forum btn_glass'  type="submit" name="result_quantity" value="13 Сентября, День программиста ">13 Сентября, День программиста </button>
+				<p><button class='forum btn_glass'  type="submit" name="result_quantity" value="24 Сентября, День машиностроителя">24 Сентября, День машиностроителя</button>
+				<p><button class='forum btn_glass'  type="submit" name="result_quantity" value="15 Октября, День работников дорожного хозяйства">15 Октября, День работников дорожного хозяйства</button>
+				<p><button class='forum btn_glass'  type="submit" name="result_quantity" value="22 Декабря, День энергетика ">22 Декабря, День энергетика </button>
+				<p><button class='forum btn_glass'  type="submit" name="result_quantity" value="Нет особого повода">Нет особого повода, нужны брендированные подарки для партнеров</button>
+			</div>
+			<!-- </form> -->
+		</div>
+
+		<div id='result_quantity' class='hide'>
+			<h2>Сколько нужно подарков? </h2>
+
+			<div onclick='show_price();'>
+			<!-- <form method="post" onclick='show_price();'> -->
+				{% csrf_token %}
+				<p><button class='forum btn_glass' type="submit" name="result_quantity" value="Минимально возможный тираж (30 шт.)">Минимально возможный тираж (30 шт.)</button>
+				<p><button class='forum btn_glass'  type="submit" name="result_quantity" value="Пока не могу точно сказать">Пока не могу точно сказать</button>
+				<p><button class='forum btn_glass'  type="submit" name="result_quantity" value="Пока не могу точно сказать">100-300</button>
+				<p><button class='forum btn_glass'  type="submit" name="result_quantity" value="Пока не могу точно сказать">Более 1000</button>
+
+				<!-- <p><span>Точное количество:<input type="text"></input></span>
+				<button class='forum btn_glass'  type="submit" name="result_quantity" value="Точное количество">Именно столько</button></p> -->
+			<!-- </form> -->
+			</div>
+		</div>
+					
+		<div id='result_price' class='hide'>
+			<h2>На какую ценовую категорию ориентируетесь?</h2>
+
+			<div onclick='show_budget();'>
+			<!-- <form method="post" onclick='show_budget();'> -->
+				{% csrf_token %}
+				<p><button class='forum btn_glass' type="submit" name="result_price" value="да">Дорого и очень представительно</button>
+				<p><button class='forum btn_glass'  type="submit" name="result_price" value="нет">Золотая середина</button>
+				<p><button class='forum btn_glass'  type="submit" name="result_price" value="нет">Подешевле</button>
+			<!-- </form> -->
+			</div>
+		</div>
+
+		<div id='result_budget' class='hide'>
+			<h2>У вас есть точный бюджет, в который нужно вписаться? Если да, напишите, пожалуста, ниже</h2>
+
+			<div onclick='show_content();'>
+			<!-- <form method="post" onclick='show_content();'> -->
+				{% csrf_token %}
+				<p><input type="" name="">
+				<button class='forum btn_glass' type="submit" name="result_budget" value="да">Подтвердить</button></p>
+
+			<!-- </form> -->
+			</div>
+		</div>
+
+		<div id='result_content' class='hide'>
+			<h2>Что бы вы хотели видеть в подарочном наборе?</h2>
+
+			<div onclick='show_result();'>
+			<!-- <form method="post" onclick='show_result();'> -->
+				{% csrf_token %}
+				<p><button class='forum btn_glass' type="submit" name="result_content" value="бельгийский шоколад ">бельгийский шоколад </button>
+				<p><button class='forum btn_glass'  type="submit" name="result_content" value="конфеты ручной работы с начинкой">конфеты ручной работы с начинкой</button>
+				<p><button class='forum btn_glass' type="submit" name="result_content" value="деликатесы">деликатесы</button>
+				<p><button class='forum btn_glass'  type="submit" name="result_content" value="алкоголь">алкоголь</button>
+				<p><button class='forum btn_glass' type="submit" name="result_content" value="ежедневник/блокнот/канцелярия">ежедневник/блокнот/канцелярия</button>
+				<p><button class='forum btn_glass'  type="submit" name="result_content" value="пауэрбанк/флешка">пауэрбанк/флешка</button>
+				<p><button class='forum btn_glass' type="submit" name="result_content" value="термокружка/бутылка для воды">термокружка/бутылка для воды</button>
+			<!-- </form> -->
+			</div>
+		</div>
+
+	</center>
+
+	<div id='the_result' class='hide'>
+		<h1>Спасибо за ответы! Рекомендую варианты:</h1>
+
+		
+			<div id='variants'>
+
+				<div class='wrapper'>
+					<div class='scroll_it'>
+						
+						<div class='slides'>
+							<img src='{% static "img/beskonechnost_2.jpg" %}'>
+						</div>
+
+						<div class='slides'>
+						  <img src='{% static "img/beskonechnost_1.jpg" %}'>
+						</div>
+
+					</div>
+				</div>
+
+
+				<h2>Бесконечность Вселенной</h2>
+				<p>Цена: от 790 р./шт.</p>
+
+				<hr>
+
+				<p>Состав</p>
+				<ul>
+					<li>Коробка картонная с прозрачной крышкой синяя</li>
+					<li>Конфеты из бельгийского молочного шоколада полусферы, ручная работа 10 гр. / 6 шт.</li>
+					<li>Размер: 14,5*10*3 см</li>
+
+				</ul>
+				<p>Брендирование</p>
+				<ul>
+					<li>Манжета на коробку конфет </li>
+				</ul>
+				<br>
+				<center>
+					<a href='https://t.me/RustamPodarok' class='btn_glass'>Оформить заказ</a>
+				</center>
+
+				<br>
+				<br>
+				<br>
+
+				<div class='wrapper'>
+					<div class='scroll_it'>
+						
+						<div class='slides'>
+							<img src='{% static "img/nano_2.jpg" %}'>
+						</div>
+
+						<div class='slides'>
+						  <img src='{% static "img/nano_1.jpg" %}'>
+						</div>
+
+					</div>
+				</div>
+				<h2>Нанобокс</h2>
+				<p>Цена: от 31 640 р./шт.</p>
+				<hr>
+				<p>Состав</p>
+				<ul>
+					<li>Коробка из кашированного картона с крышкой на магните, черная</li>
+					<li>Портативное беспроводное зарядное устройство, 5000 mAh</li>
+					<li>Док-станция с быстрой беспроводной зарядкой</li>
+					<li>Беспроводная мышь с подсветкой и микро ресивером</li>
+					<li>Портативная колонка, белая подсветка</li>
+					<li>Наполнитель бумажный черный</li>
+					<li>Размер 21х24.5х8.8 см</li>
+				</ul>
+
+				<p>Брендирование</p>
+				<ul>
+					<li>Нанесение на крышку коробки</li>
+					<li>Гравировка на зарядном устройстве</li>
+					<li>Гравировка на док-станции</li>
+					<li>Гравировка на беспроводной мыши</li>
+					<li>Гравировка на колонке</li>
+				</ul>
+
+				<br>
+				<center>
+					<a href='https://t.me/RustamPodarok' class='btn_glass'>Оформить заказ</a>
+				</center>
+			</div>
+
+
+	
+	
+	<br><br>
 	<h1>Показать 5 самых популярных подарочных наборов месяца</h1>
-	<button>Показать</button>
+	<center><button class='btn_glass'>Показать</button></center>
+
+	</div>
 
 </div>
 {% endblock %}

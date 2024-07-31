@@ -6,14 +6,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Подобр подарков</title>
   <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" >
-    <link rel="stylesheet" href='{% static "style.css" %}'>
-    </head>
+  <link rel="stylesheet" href='{% static "style.css" %}'>
+  <link rel="stylesheet" href='{% static "magic.css" %}'>
+
+    
+</head>
+
 <body>
-<header>
-</header>
+
+
+<!-- <div id='magics'></div> -->
+<!-- <script src='{% static "magic.js" %}'></script>  -->
+
+<div id='content'>
+
 {% block content %}
 {% endblock %}
+
+</div>
+
 <footer>
-  <a href='#'><button>Поговорить с человеком</button></a>
-  <a href='#'><button>На сайт</button></a>
+   <!--
+   <center>
+    <a href='https://t.me/RustamPodarok'><button class='btn_glass'>Поговорить с человеком</button></a> 
+  </center>
+-->
+
+  <script src='{% static "show_hide.js" %}'></script>
+  <script src='{% static "gift_slider.js" %}'></script> 
+
 </footer>
+</body>
+</html>
