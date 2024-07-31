@@ -144,7 +144,7 @@
 				<br>
 
 				<div class='wrapper'>
-					<div class='scroll_it'>
+					<div class='scroll_res'>
 						
 						<div class='slides'>
 							<img src='{% static "img/nano_2.jpg" %}'>
@@ -190,7 +190,55 @@
 	
 	<br><br>
 	<h1>Показать 5 самых популярных подарочных наборов месяца</h1>
-	<center><button class='btn_glass'>Показать</button></center>
+	<center><button class='btn_glass' onclick='show_popular();'>Показать</button></center>
+
+	<br><br>
+	<div id='popular' class='hide'>
+		<div class='wrapper'>
+			<div class='scroll_popular'>
+
+
+				<div class='slides'>
+					<img src='{% static "img/brend_1.jpg" %}'>
+					<br>
+					<h2>Бренд из конфет</h2>
+					<p>Цена: 2 550 р./шт.</p>
+				</div>
+				
+				<div class='slides'>
+					<img src='{% static "img/gotov_1.jpg" %}'>
+					<br>
+					<h2>Готов к выходным</h2>
+					<p>Цена: от 4 220 р./шт.</p>
+				</div>
+
+				<div class='slides'>
+					<img src='{% static "img/shepot_1.jpg" %}'>
+					<br>
+					<h2>Шепот леса</h2>
+					<p>Цена:2 890 р./шт.</p>
+				</div>
+
+				<div class='slides'>
+					<img src='{% static "img/dikaya_1.jpg" %}'>
+					<br>
+					<h2>Дикая охота</h2>
+					<p>Цена: 4 670 р./шт.</p>
+				</div>
+
+				<div class='slides'>
+					<img src='{% static "img/gatsby_1.jpg" %}'>
+					<br>
+					<h2>Вечеринка у Гэтсби</h2>
+					<p>Цена: 7 100 р./шт.</p>
+				</div>
+
+
+			</div>
+		</div>
+		
+	</div>
+
 
 	</div>
 

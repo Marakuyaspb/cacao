@@ -81,13 +81,28 @@ a{
     overflow-x: auto;
     white-space: nowrap;
 }
+.scroll_res {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.scroll_popular {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+
 div.slides{
-  display: inline-block;
-  padding: 4px;
+	display: inline-block;
+	padding: 4px;
+	margin: 10px;
+	width: 90%;
 }
 ::-webkit-scrollbar {
     display: none;
 }
 img{
-    height: 28em;
+    width: 27em;
 }

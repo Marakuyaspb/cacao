@@ -1,5 +1,10 @@
 rrr/.env
 rrr/content.txt
+rrr/config.py
+
+cacao/static/img/*
+cacao/content.txt
+
 
 db.sqlite3
 

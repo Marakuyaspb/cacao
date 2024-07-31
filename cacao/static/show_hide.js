@@ -7,6 +7,8 @@ const PRICE = document.getElementById('result_price');
 const BUDGET = document.getElementById('result_budget');
 const CONTENT = document.getElementById('result_content');
 const RESULT = document.getElementById('the_result');
+const POPULAR = document.getElementById('popular');
+
 
 function show_why(event){
 	
@@ -32,4 +34,8 @@ function show_content(event){
 function show_result(event){
 	CONTENT.classList.add('hide');
 	RESULT.classList.remove('hide');
+}
+
+function show_popular(event){
+	POPULAR.classList.remove('hide');
 }
