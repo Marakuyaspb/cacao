@@ -12,7 +12,7 @@ from cacao import urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('cacao.urls')),
-    url(r'^telegrambot/', include('telegrambot.urls', namespace="telegrambot")),
+    #url(r'^telegrambot/', include('telegrambot.urls', namespace="telegrambot")),
 ]
 
 

@@ -30,8 +30,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'cacao.apps.CacaoConfig',
-    'telegrambot',
-    'rest_framework',
+    #'telegrambot',
+    #'rest_framework',
 ]
 
 MIDDLEWARE = [
