@@ -35,13 +35,24 @@ a{
 	text-decoration: none;
 }
 
+input{
+	padding: 16px;
+	width: 14em;
+	border:none;
+	border-radius: 8px;
+	box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.25) inset;
+	-webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.25) inset;
+	-moz-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.25) inset;
+}
+
 .glass{
-	background: rgb(255, 255, 255);
+	background: rgba(255, 255, 255, .2);
 	backdrop-filter: blur(5px);
 	-webkit-backdrop-filter: blur(5px);
 	border-radius: 20px;
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-	padding: 2em;
+	padding: 1em;
+	margin: .5em;
 }
 
 .btn_glass{
@@ -54,7 +65,7 @@ a{
 	box-shadow: 0 4px 8px rgba(164, 164, 164, 0.3);
 	width: 14em;
 	color: #4c4d66;
-	font-size: 1.2em;
+	font-size: 1.1em;
 	background-color: #eaedf066;
 	font-weight: 300;
 }
@@ -63,6 +74,12 @@ a{
 }
 .btn_glass:active{
 	background-color: #d0e1f266;
+}
+
+
+#quiz{
+	position: relative;
+	z-index: 555;
 }
 
 
@@ -75,6 +92,7 @@ a{
 
 
 /*  small carousel with result imgs  */
+
 
 .scroll_it {
     width: 100%;
@@ -106,3 +124,91 @@ div.slides{
 img{
     width: 27em;
 }
+
+
+
+
+/*   SPHERES   */
+
+.animation_here{
+  overflow-x: clip!important;
+}
+
+.relative_block{
+  position: relative;
+}
+
+.absolute_block{
+  position: absolute;
+}
+
+.ci_violet {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: rgb(234, 165, 242);
+    position: absolute;
+    animation: moveci_violet 37s infinite;
+}
+.ci_pink_blue {
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    background: linear-gradient(125deg, rgb(255, 204, 224), rgb(209, 204, 255));
+    position: absolute;
+    animation: moveci_pink_blue 45s infinite;
+  }
+.ci_blue {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: linear-gradient(125deg, rgb(212, 206, 245), rgb(162, 152, 214));
+    position: absolute;
+    animation: moveci_blue 25s infinite;
+}
+
+
+@keyframes moveci_violet {
+    0% {
+      left: 70%;
+      top: -20%;
+    }
+    50% {
+      left: 70%;
+      top: 70%;
+    }
+    100% {
+      left: 70%;
+      top: -20%;
+    }
+  }
+@keyframes moveci_pink_blue {
+    0% {
+      left: 30%;
+      top: 60%;
+    }
+    50% {
+      left: 30%;
+      top: 5%;
+
+    }
+    100% {
+      left: 30%;
+      top: 60%;
+
+    }
+  }
+@keyframes moveci_blue {
+    0% {
+      left: -10%;
+      top: 20%;
+    }
+    50% {
+      left: -10%;
+      top: 60%;
+    }
+    100% {
+      left: -10%;
+      top: 20%;
+    }
+  }

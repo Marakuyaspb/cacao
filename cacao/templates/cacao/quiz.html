@@ -3,7 +3,16 @@
 
 {% block content %}
 
-<div class='quiz'>
+
+<div class ='clip_overflow_x'>
+	<div class='animation_here'>
+		<div class='ci_violet'></div>
+		<div class='ci_pink_blue'></div>
+		<div class='ci_blue'></div>
+	</div>
+</div>
+
+<div id='quiz' class='glass p_1'>
 
 	<div id='the_start' class=''>
 		<br>
@@ -71,8 +80,8 @@
 			<div onclick='show_content();'>
 			<!-- <form method="post" onclick='show_content();'> -->
 				{% csrf_token %}
-				<p><input type="" name="">
-				<button class='forum btn_glass' type="submit" name="result_budget" value="да">Подтвердить</button></p>
+				<p><input type="" name="" class=''>
+				<p><button class='forum btn_glass' type="submit" name="result_budget" value="да">Подтвердить</button></p>
 
 			<!-- </form> -->
 			</div>
@@ -188,56 +197,61 @@
 
 	
 	
-	<br><br>
-	<h1>Показать 5 самых популярных подарочных наборов месяца</h1>
-	<center><button class='btn_glass' onclick='show_popular();'>Показать</button></center>
+		<br><br>
+		<h1>Показать 5 самых популярных подарочных наборов месяца</h1>
+		<center><button class='btn_glass' onclick='show_popular();'>Показать</button></center>
 
-	<br><br>
-	<div id='popular' class='hide'>
-		<div class='wrapper'>
-			<div class='scroll_popular'>
+		<br><br>
+		<div id='popular' class='hide'>
+			<div class='wrapper'>
+				<div class='scroll_popular'>
 
 
-				<div class='slides'>
-					<img src='{% static "img/brend_1.jpg" %}'>
-					<br>
-					<h2>Бренд из конфет</h2>
-					<p>Цена: 2 550 р./шт.</p>
+					<div class='slides'>
+						<img src='{% static "img/brend_1.jpg" %}'>
+						<br>
+						<h2>Бренд из конфет</h2>
+						<p>Цена: 2 550 р./шт.</p>
+					</div>
+					
+					<div class='slides'>
+						<img src='{% static "img/gotov_1.jpg" %}'>
+						<br>
+						<h2>Готов к выходным</h2>
+						<p>Цена: от 4 220 р./шт.</p>
+					</div>
+
+					<div class='slides'>
+						<img src='{% static "img/shepot_1.jpg" %}'>
+						<br>
+						<h2>Шепот леса</h2>
+						<p>Цена:2 890 р./шт.</p>
+					</div>
+
+					<div class='slides'>
+						<img src='{% static "img/dikaya_1.jpg" %}'>
+						<br>
+						<h2>Дикая охота</h2>
+						<p>Цена: 4 670 р./шт.</p>
+					</div>
+
+					<div class='slides'>
+						<img src='{% static "img/gatsby_1.jpg" %}'>
+						<br>
+						<h2>Вечеринка у Гэтсби</h2>
+						<p>Цена: 7 100 р./шт.</p>
+					</div>
+
+
 				</div>
-				
-				<div class='slides'>
-					<img src='{% static "img/gotov_1.jpg" %}'>
-					<br>
-					<h2>Готов к выходным</h2>
-					<p>Цена: от 4 220 р./шт.</p>
-				</div>
-
-				<div class='slides'>
-					<img src='{% static "img/shepot_1.jpg" %}'>
-					<br>
-					<h2>Шепот леса</h2>
-					<p>Цена:2 890 р./шт.</p>
-				</div>
-
-				<div class='slides'>
-					<img src='{% static "img/dikaya_1.jpg" %}'>
-					<br>
-					<h2>Дикая охота</h2>
-					<p>Цена: 4 670 р./шт.</p>
-				</div>
-
-				<div class='slides'>
-					<img src='{% static "img/gatsby_1.jpg" %}'>
-					<br>
-					<h2>Вечеринка у Гэтсби</h2>
-					<p>Цена: 7 100 р./шт.</p>
-				</div>
-
-
 			</div>
+
+			<center>
+				<a href='https://t.me/RustamPodarok' class='btn_glass'>Оформить заказ</a>
+			</center>
+
+			<br>
 		</div>
-		
-	</div>
 
 
 	</div>
